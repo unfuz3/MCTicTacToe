@@ -6,7 +6,7 @@ def isvalid(board:list[list[int]], pos:tuple[int,int]) -> bool: # Check whether 
 class Node():
 	def __init__(self,parent) -> None:
 		self.parent = parent
-		self.children = list[Node] 
+		self.children = []
 		self.value = 0
 		self.winrate = [0,0]
 		self.pos = [[0,0,0],[0,0,0],[0,0,0]]
@@ -61,9 +61,7 @@ class MCTree():
 			return True
 		else:
 			for node in rootnode.children:
-				self.expandFullDepth(node,depth-1,-turn)
-
-			
+				self.expandFullDepth(node,depth-1,-turn)		
 
 
 if __name__=="__main__":
